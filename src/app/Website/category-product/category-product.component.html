@@ -1,0 +1,29 @@
+<main class="main-content ">
+    <div class="Heading">
+        <h1>Best Products</h1>
+        <h3>For All Customer</h3>
+    </div>
+    <div class="card-container" >
+        <div class="card" *ngFor="let product of productList">
+            <img [src]="product.productImageUrl" alt="Product 1">
+            <div class="card-content">
+                <h3>{{product.productShortName}}</h3>
+                <p>{{product.productName}}</p>
+                <div class="d-flex my-3">
+                    <i class="fas fa-star text-primary" ></i>
+                    <i class="fas fa-star text-primary" ></i>
+                    <i class="fas fa-star text-primary" ></i>
+                    <i class="fas fa-star text-primary" ></i>
+                    <i class="fas fa-star" ></i>
+                </div>
+                <div class="mb-4">
+                    ₹ {{product.productPrice}}
+                </div>
+                <a href="#"><button class="btn"  (click)="addToCartFunt(product.productId)">Add to Cart</button>&nbsp;</a>
+                    <a><button class="btn">Buy Now</button></a>
+            </div>
+        </div>
+        
+        <!-- Add more cards as needed -->
+    </div>
+</main>

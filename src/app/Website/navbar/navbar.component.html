@@ -1,0 +1,79 @@
+ <div class="head">
+    <nav class="navbar">
+        <div class="navbar-brand"><i class="fa fa-shopping-basket"></i> BigBasket</div>
+        <button class="open-menu-btn" id="open-menu-btn">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+        </button>
+        <ul class="navbar-nav" id="navbar-nav">
+    
+            <li class="nav-item"><a href="home">Home</a></li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle">Categorys</a>
+                <ul class="dropdown-menu scrollable-menu" >
+                    <li  *ngFor="let category of categoryList"><a  (click)="navigateToProduct(category.categoryId)" >{{category.categoryName}}</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#services">Services</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" id="search-btn">
+                    <i class="fa fa-search"></i>
+                </a>
+            </li>
+            <!-- Cart Icon -->
+            <li class="nav-item">
+                <a href="#" class="nav-link" id="cart-icon">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="badge badge-pill badge-primary">{{cartCount}}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" id="userLogin">
+                    <i class="fa fa-user"></i>
+                    
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div> 
+
+
+<!-- shopping cart -->
+<div class="shopping-cart"  id="shopping-cart" >
+    <div class="box"*ngFor="let cart of cartList" >
+        <img src={{cart.productImageUrl}} alt="">
+        <div class="content">
+            <h3>{{cart.productName}}</h3>
+            <h3>{{cart.productShortName}}</h3>
+            <span class="price">RS. {{cart.productPrice}}</span>
+            <span class="quantity">Qty : {{cart.quantity}}</span>
+        </div>
+        <button type="submit" (click)="removeCartBtn(cart.cartId)"><i class="fa fa-trash"></i></button>
+    </div>
+    <div class="product" >
+        <button>ViewCart</button> &nbsp;
+        <button>Checkout</button>
+    </div>
+</div>
+
+<!-- search btn -->
+<div class=" serch-btn" >
+    <span class="search-icon" id="search-form">
+        <input type="text" class=" form-control" placeholder="search hear....">
+        <button type="submit" class="btn btn-primary">Search <i class="fa fa-search"></i></button>
+    </span>
+</div>
+
+
+<!-- login/register -->
+
+<div class="user" id="user">
+    <button type="submit" class="btn btn-primary" routerLink="login">User Login</button>&nbsp;
+    <button type="submit" class="btn btn-secondary" routerLink="register">New User/Registration</button>
+</div>
+<router-outlet></router-outlet>
+
+

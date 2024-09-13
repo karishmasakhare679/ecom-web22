@@ -1,0 +1,302 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('../node_modules/bootstrap/dist/css/bootstrap.css');
+
+
+/* navabar */
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: green;
+        z-index: 1;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .open-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 44px;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+        border: none;
+        z-index: 2;
+    }
+
+    .open-menu-btn .line {
+        height: 2px;
+        width: 30px;
+        background-color: #fff;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .open-menu-btn .line-1 {
+        transform: translateY(-8px);
+    }
+
+    .open-menu-btn .line-3 {
+        transform: translateY(8px);
+    }
+
+    .open-menu-btn.active .line-1 {
+        transform: rotate(45deg);
+    }
+
+    .open-menu-btn.active .line-2 {
+        opacity: 0;
+    }
+
+    .open-menu-btn.active .line-3 {
+        transform: rotate(-45deg);
+    } 
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    /* dropdown menu */
+    .dropdown-menu {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        display: none;
+    }
+
+    .dropdown-menu a {
+        color: #fff;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .scrollable-menu {
+        max-height: 300px; /* Adjust height for smaller screens */
+        width: 100%; /* Full width on smaller screens */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+    }
+    
+    .badge {
+        top: 8px; /* Adjust top position for smaller screens */
+        right: 8px; /* Adjust right position for smaller screens */
+    }
+}
+
+/*shopping cart */
+.shopping-cart {
+    width: 20%;
+    position: fixed; /* Fixed position to stay in view */
+    
+    right: 25px; /* Align to the right */
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    z-index: 1000; /* Ensure it appears in front of other content */
+    display: none; /* Hidden by default */
+    max-height: 500px; /* Set a maximum height */
+    overflow-y: auto; 
+}
+
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.box .content {
+    flex: 1;
+}
+
+.box h3 {
+    font-size: 18px;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.box .price {
+    color: #888;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.box .quantity {
+    color: #555;
+    font-size: 14px;
+}
+
+.box i.fa-trash {
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.box i.fa-trash:hover {
+    color: #c0392b;
+}
+
+/* search button */
+
+.search-btn {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center;
+    display: none;
+    
+}
+
+.search-icon {
+    display: flex;
+    width: 25%; /* Ensures the container spans the entire width */
+    position:fixed;
+    right: 0;
+    top: 80px;
+    z-index: 1000;
+    display: none;
+}
+
+
+.search-icon .form-control {
+    width: 50%;
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 25px 0 0 25px; 
+    border: 1px solid #ccc;
+    height: 40px; 
+    outline: none;
+}
+
+.search-icon .btn {
+    border-radius: 0 25px 25px 0    ; 
+    padding: 0 15px;
+    height: 40px; 
+    border: 1px solid #007bff;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-icon .btn i {
+    margin-left: 5px; 
+}
+
+.search-icon .btn:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3; 
+}
+
+/* login/register */
+.user{
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    border: 0px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2pxsolid red;
+    background-color: rgb(91, 165, 64);
+    display: none;
+    z-index: 1000;
+}
+
+/* viewCart button*/
+.product{
+    align-items: center;
+
+}
+.product button:hover{
+    background-color: rgb(127, 127, 181);
+}
+
+/* Scrollable Menu */
+.scrollable-menu {
+    max-height: 200px; /* Adjust this value as needed */
+    overflow-y: auto;
+    width: 200px; /* Adjust this value as needed */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.scrollable-menu li {
+    padding: 0;
+}
+
+.scrollable-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.scrollable-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Styling the scrollbar */
+.scrollable-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollable-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.scrollable-menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.scrollable-menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
